@@ -1,0 +1,30 @@
+Package: REDI
+Title: Robust Exponential Decreasing Index
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Alexia", "Grenouillat", ,
+    "grenouil@insa-toulouse.fr", role = c("aut", "cre")),
+    person("Arthur", "Leroy", ,"arthur.leroy.pro@gmail.com", role = "aut")
+    )
+Maintainer : Alexia Grenouillat <grenouil@insa-toulouse.fr>
+Description: Implementation of the Robust Exponential Decreasing Index (REDI),
+    proposed in the article by Issa Moussa, Arthur Leroy et al. (2019)
+    <https://bmjopensem.bmj.com/content/bmjosem/5/1/e000573.full.pdf>.
+    The REDI represents a measure of cumulated workload, robust to missing data,
+    providing control of the decreasing influence of workload over time. 
+    Various functions are provided to format data, compute REDI, and 
+    visualise results in a simple and convenient way. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    readr,
+    dplyr,
+    ggplot2,
+    tidyr,
+    tibble,
+    utils,
+    magrittr, 
+    rlang, 
+    lubridate

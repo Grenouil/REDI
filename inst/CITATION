@@ -1,0 +1,14 @@
+citHeader("To cite REDI in publications use:")
+
+citEntry(
+  entry = "Article",
+  title = "Robust Exponential Decreasing Index (REDI): adaptive and robust method for computing cumulated workload",
+  author="Moussa, Issa and Leroy, Arthur and Sauliere, Guillaume and Schipman, Julien and Toussaint, Jean-Francois and Sedeaud, Adrien",
+  journal="BMJ Open Sport and Exercise Medicine",
+  volume="5",
+  number="1",
+  pages="e000573",
+  year="2019",
+  url = "https://bmjopensem.bmj.com/content/5/1/e000573.abstract",
+  textVersion = ""
+)

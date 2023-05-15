@@ -3,10 +3,10 @@ Title: Robust Exponential Decreasing Index
 Version: 1.0.0
 Authors@R: c(
     person("Alexia", "Grenouillat", ,
-    "grenouil@insa-toulouse.fr", role = c("aut", "cre")),
+    "alexia.grenouillat00@gmail.com", role = c("aut", "cre")),
     person("Arthur", "Leroy", ,"arthur.leroy.pro@gmail.com", role = "aut")
     )
-Maintainer : Alexia Grenouillat <grenouil@insa-toulouse.fr>
+Maintainer : Alexia Grenouillat <alexia.grenouillat00@gmail.com>
 Description: Implementation of the Robust Exponential Decreasing Index (REDI),
     proposed in the article by Issa Moussa, Arthur Leroy et al. (2019)
     <https://bmjopensem.bmj.com/content/bmjosem/5/1/e000573.full.pdf>.

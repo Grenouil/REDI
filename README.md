@@ -107,6 +107,6 @@ plot_redi(redi = db_redi,
 #> Warning: Removed 183 rows containing missing values (`geom_point()`).
 ```
 
-<img src="man/figures/README-plot REDI-1.png" width="100%" />
+<img src="man/figures/README-plot REDI-1.png" width="80%" style="display: block; margin: auto;" />
 
 

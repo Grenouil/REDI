@@ -1,0 +1,79 @@
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README_",
+  out.width = "100%"
+)
+
+```
+
+# REDI
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The *REDI* package implements the Robust Exponential Decreasing Index (REDI). It represents a measure of cumulated workload, is robust to missing data and provides control of the decreasing influence of the workload over time.
+
+*REDI* provides various functions to format data, compute REDI and visualise results in a simple and convenient way.
+
+Issa Moussa, Arthur Leroy et al. (2019): Robust Exponential Decreasing Index (REDI): adaptive and robust method for computing cumulated workload. *BMJ Open Sport & Exercise Medicine*,
+    <https://bmjopensem.bmj.com/content/bmjosem/5/1/e000573.full.pdf>.
+  
+## Installation
+
+You can install the development version of REDI from [GitHub](https://github.com/) with:
+
+``` r
+#install.packages("devtools")
+devtools::install_github("Grenouil/REDI-package-master")
+```
+
+## Example: REDI
+
+Here is a basic example on how to simulate a dataset with the adequate format, apply REDI on it and visualise results.
+
+### Data simulation
+```{r generate data REDI}
+library(REDI)
+## Simulate a synthetic dataset, containing observations (inputs) from '2022-01-01' to '2023-01-01'. Outputs follow a gaussian distribution (mean = 50, var = 10), with a ratio of missing values equals to 0.5.
+
+set.seed(3)
+db <- simu_db(start_date = '2022-01-01',
+    end_date = '2023-01-01',
+    by = 'day',
+    output_distrib = 'Gaussian',
+    ratio_missing = 0.5,
+    mean = 50,
+    var = 10)
+db
+```
+
+As displayed above, any dataset processed in REDI should provide 2 columns: one corresponding to `Input` values (*i.e.* time) and another to `Output` values (*i.e.* workload).
+
+### Computation of REDI
+
+```{r compute REDI}
+## Apply redi() on db, with coef equal to 0.1.
+db_redi <- redi(data = db, coef = 0.1, plot = FALSE)
+db_redi
+```
+
+**db_redi** contains 4 columns: `Input`, `Output`,`REDI` and `Lambda.
+
+### Display results 
+
+```{r plot_REDI}
+## Display results on a 2D plot, setting 'plot_data' to TRUE to visualise original data.
+plot_redi(redi = db_redi,
+          x_axis = 'Input',
+          y_axis = 'Output',
+          plot_data = TRUE)
+```
+
+
+

@@ -7,7 +7,9 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README_",
-  out.width = "100%"
+  out.width = "80%",
+  dpi = 300,
+  fit.align = "center"
 )
 
 ```
@@ -63,7 +65,7 @@ db_redi <- redi(data = db, coef = 0.1, plot = FALSE)
 db_redi
 ```
 
-**db_redi** contains 4 columns: `Input`, `Output`,`REDI` and `Lambda.
+**db_redi** contains 4 columns: `Input`, `Output`,`REDI` and `Lambda`.
 
 ### Display results 
 

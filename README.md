@@ -17,7 +17,7 @@ workload over time.
 *REDI* provides various functions to format data, compute REDI and
 visualise results in a simple and convenient way.
 
-Issa Moussa, Arthur Leroy et al. (2019): Robust Exponential Decreasing
+Issa Moussa, Arthur Leroy et al.(2019): Robust Exponential Decreasing
 Index (REDI): adaptive and robust method for computing cumulated
 workload. *BMJ Open Sport & Exercise Medicine*,
 <https://bmjopensem.bmj.com/content/bmjosem/5/1/e000573.full.pdf>.
@@ -107,6 +107,6 @@ plot_redi(redi = db_redi,
 #> Warning: Removed 183 rows containing missing values (`geom_point()`).
 ```
 
-<img src="man/figures/README-plot REDI-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="man/figures/README_plot_REDI.png" width="80%" style="display: block; margin: auto;" />
 
 

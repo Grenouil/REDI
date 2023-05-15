@@ -39,7 +39,8 @@ plot_redi <- function(
     ggplot2::labs(
       x = x_axis,
       y = y_axis,
-      title = 'Evolution of REDI over time') +
+      title = 'Evolution of REDI over time',
+      col = expression(lambda)) +
     ggplot2::theme_classic()
 
   ## Add raw data points if requested

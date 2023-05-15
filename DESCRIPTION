@@ -1,6 +1,6 @@
 Package: REDI
 Title: Robust Exponential Decreasing Index
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: c(
     person("Alexia", "Grenouillat", ,
     "grenouil@insa-toulouse.fr", role = c("aut", "cre")),

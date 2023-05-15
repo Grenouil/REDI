@@ -64,7 +64,7 @@ redi <- function(
 
   ## Display a generic plot of the results
   if(plot){
-    plot_redi(res) %>% print()
+    plot_redi(res) %>% print() %>% suppressWarnings()
   }
 
   return(res)

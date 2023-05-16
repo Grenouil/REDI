@@ -51,8 +51,6 @@ plot_redi <- function(
         alpha = alpha,
         size = size
       )
-
-  gg %>% print() %>% suppressWarnings()
   }
 
   return(gg)

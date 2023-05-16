@@ -104,6 +104,6 @@ loop_redi <- function(data, coef = 0.1)
 
   ## Add REDI values to the dataset and return results
     data %>%
-    dplyr::mutate('REDI' = list_redi) %>%
+    dplyr::mutate('REDI' = list_redi, 'Lambda' = coef) %>%
     return()
 }

@@ -81,7 +81,7 @@ res
 
 ## Detailed workflow
 
-For a advanced use of the package, here is a quick step-by-step guide.
+For an advanced use of the package, here is a quick step-by-step guide.
 
 ### Data simulation
 

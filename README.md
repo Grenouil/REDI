@@ -52,13 +52,13 @@ data
 #>  8 2022-01-08   NA  
 #>  9 2022-01-09   NA  
 #> 10 2022-01-10   NA  
-#> # ... with 356 more rows
+#> # i 356 more rows
 
 ## Compute REDI over all observations for different Lambda values and display results
 res = redi(data)
 ```
 
-<img src="man/figures/README_REDI in a nutshell-1.png" width="80%" />
+<img src="man/figures/README_REDI_in_a_nutshell-1.png" width="80%" />
 
 ``` r
 
@@ -76,12 +76,12 @@ res
 #>  8 2022-12-25   49.1  49.7   0.05
 #>  9 2022-12-24   52.6  49.7   0.05
 #> 10 2022-12-23   NA    49.5   0.05
-#> # ... with 1,088 more rows
+#> # i 1,088 more rows
 ```
 
 ## Detailed workflow
 
-For an advanced use of the package, here is a quick step-by-step guide.
+For a advanced use of the package, here is a quick step-by-step guide.
 
 ### Data simulation
 
@@ -114,7 +114,7 @@ simu_data
 #>  8 2022-01-08   NA  
 #>  9 2022-01-09   NA  
 #> 10 2022-01-10   NA  
-#> # ... with 356 more rows
+#> # i 356 more rows
 ```
 
 As displayed above, any dataset processed in REDI should provide 2
@@ -124,7 +124,7 @@ to `Output` values (*e.g.* workload).
 ### Convert a dataset to the correct format with `format_data()`
 
 However, a real-life dataset will generally not have the correct format
-to compute REDI directly. Therefore, the `format_data()` function is
+to compute REDI directy. Therefore, the `format_data()` function is
 designed to help with this process by identifying the columns
 corresponding to the Input (e.g the date) and the Output (e.g. the
 workload) variables. The Input column should be defined with a correct
@@ -179,7 +179,7 @@ db
 #>  8 2022-01-08   32.4
 #>  9 2022-01-09   45.0
 #> 10 2022-01-10   46.8
-#> # ... with 91 more rows
+#> # i 91 more rows
 ```
 
 ### Computation of REDI with `compute_redi()`
@@ -200,13 +200,13 @@ max(db$Input)
 #> [1] "2022-04-11"
 ```
 
-### Computation of multiple REDI values over time with `loop_redi()`
+### Computation multiple REDI values over time with `loop_redi()`
 
 To sequentially compute REDI for all `Input` values in the dataset with
 speed-up vectorised operations, one can use the `loop_redi()` function.
 
 ``` r
-## Apply loop_redi() to compute REDI for all dates in the dataset 
+## Apply loop_redi() to tcompute REDI for all dates in the dataset 
 db_redi <- loop_redi(data = db, coef = 0.5)
 
 db_redi
@@ -223,7 +223,7 @@ db_redi
 #>  8 2022-04-04   36.9  48.2    0.5
 #>  9 2022-04-03   55.0  55.5    0.5
 #> 10 2022-04-02   63.0  55.8    0.5
-#> # ... with 91 more rows
+#> # i 91 more rows
 ```
 
 ### Display results with `plot_redi()`
@@ -240,7 +240,7 @@ plot_redi(redi = db_redi,
 #> Warning: Removed 1 rows containing missing values (`geom_point()`).
 ```
 
-<img src="man/figures/README_plot REDI-1.png" width="80%" />
+<img src="man/figures/README_plot_REDI-1.png" width="80%" />
 
 One can customise graphs by:
 
@@ -262,7 +262,7 @@ results for different $\lambda$ values.
 db_full_redi <- redi(data = db, coef = c(0.1, 0.2, 0.3), plot = TRUE)
 ```
 
-<img src="man/figures/README_wrapper REDI-1.png" width="80%" />
+<img src="man/figures/README_wrapper_REDI-1.png" width="80%" />
 
 ``` r
 
@@ -280,5 +280,5 @@ db_full_redi
 #>  8 2022-04-04   36.9  50.7    0.1
 #>  9 2022-04-03   55.0  52.1    0.1
 #> 10 2022-04-02   63.0  51.8    0.1
-#> # ... with 293 more rows
+#> # i 293 more rows
 ```

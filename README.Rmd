@@ -39,7 +39,7 @@ devtools::install_github("Grenouil/REDI")
 
 Here is a basic example on how to simulate a dataset with the adequate format, compute REDI values over time and display results.
 
-```{r REDI in a nutshell}
+```{r REDI_in_a_nutshell}
 library(REDI)
 set.seed(42)
 ## Generate a synthetic dataset with the correct format
@@ -80,7 +80,7 @@ As displayed above, any dataset processed in REDI should provide 2 columns: one 
 
 However, a real-life dataset will generally not have the correct format to compute REDI directy. Therefore, the `format_data()` function is designed to help with this process by identifying the columns corresponding to the Input (e.g the date) and the Output (e.g. the workload) variables. The Input column should be defined with a correct `Date` type.  The function will automatically identify missing values between each observations, considering the `by` argument as the time increment (for instance with 'day', the default, each day between two observed dates is considered missing). Finally, Output values for duplicated Input values can be summarised according to the `summarise_duplicate` argument. 
 
-```{r format dataset}
+```{r format_dataset}
 
 ## Create a dummy real-life dataset 
 raw_db <- data.frame(
@@ -110,7 +110,7 @@ db
 ### Computation of REDI with `compute_redi()`
 To compute a single REDI value, simply use the `compute_redi()` function. It will correspond to the REDI value for the most recent observed Input in the dataset, using all data from the past. Feel free to adapt the $\lambda$ coefficient, controlling the exponential decay of weights over time, depending on the context. 
 
-```{r compute REDI}
+```{r compute_REDI}
 
 ## Compute REDI at the current date (2022-04-11 in this example)
 compute_redi(db, coef = 0.05)
@@ -122,7 +122,7 @@ max(db$Input)
 
 To sequentially compute REDI for all `Input` values in the dataset with speed-up vectorised operations, one can use the `loop_redi()` function. 
 
-```{r compute REDI via loop_redi()}
+```{r compute_REDI_via_loop_redi}
 ## Apply loop_redi() to tcompute REDI for all dates in the dataset 
 db_redi <- loop_redi(data = db, coef = 0.5)
 
@@ -131,7 +131,7 @@ db_redi
 
 ### Display results with `plot_redi()`
 The `plot_redi()` function is proposed to display the results, and provides several options to personalise the graphs.
-```{r plot REDI}
+```{r plot_REDI}
 ## Display results as time series of REDI values
 plot_redi(redi = db_redi,
           x_axis = 'Date',
@@ -148,7 +148,7 @@ One can customise graphs by:
 
 As presented in the nutshell example, all the previous steps (formatting, computations, plotting) are wrapped into the `redi()` function. In addition to the arguments of the previous functions, it is also possible to provide a vector to the `coef` argument to display results for different $\lambda$ values. 
 
-```{r wrapper REDI}
+```{r wrapper_REDI}
 ## Apply redi() on db and provide a vector of coefficients.
 db_full_redi <- redi(data = db, coef = c(0.1, 0.2, 0.3), plot = TRUE)
 

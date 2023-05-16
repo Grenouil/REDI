@@ -1,7 +1,7 @@
 citHeader("To cite REDI in publications use:")
 
-citEntry(
-  entry = "Article",
+bibentry(
+  bibtype = "Article",
   title = "Robust Exponential Decreasing Index (REDI): adaptive and robust method for computing cumulated workload",
   author="Moussa, Issa and Leroy, Arthur and Sauliere, Guillaume and Schipman, Julien and Toussaint, Jean-Francois and Sedeaud, Adrien",
   journal="BMJ Open Sport and Exercise Medicine",

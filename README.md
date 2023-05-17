@@ -1,5 +1,5 @@
 
-# REDI
+# REDI <img src="man/figures/logo_redi.png" align="right" width="120" />
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -39,7 +39,7 @@ set.seed(42)
 data = simu_db()
 
 data
-#> # A tibble: 366 x 2
+#> # A tibble: 366 × 2
 #>    Input      Output
 #>    <date>      <dbl>
 #>  1 2022-01-01   54.3
@@ -52,7 +52,7 @@ data
 #>  8 2022-01-08   NA  
 #>  9 2022-01-09   NA  
 #> 10 2022-01-10   NA  
-#> # i 356 more rows
+#> # … with 356 more rows
 
 ## Compute REDI over all observations for different Lambda values and display results
 res = redi(data)
@@ -63,7 +63,7 @@ res = redi(data)
 ``` r
 
 res
-#> # A tibble: 1,098 x 4
+#> # A tibble: 1,098 × 4
 #>    Input      Output  REDI Lambda
 #>    <date>      <dbl> <dbl>  <dbl>
 #>  1 2023-01-01   NA    49.2   0.05
@@ -76,7 +76,7 @@ res
 #>  8 2022-12-25   49.1  49.7   0.05
 #>  9 2022-12-24   52.6  49.7   0.05
 #> 10 2022-12-23   NA    49.5   0.05
-#> # i 1,088 more rows
+#> # … with 1,088 more rows
 ```
 
 ## Detailed workflow
@@ -101,7 +101,7 @@ simu_data <- simu_db(start_date = '2022-01-01',
     var = 10)
 
 simu_data
-#> # A tibble: 366 x 2
+#> # A tibble: 366 × 2
 #>    Input      Output
 #>    <date>      <dbl>
 #>  1 2022-01-01   54.3
@@ -114,7 +114,7 @@ simu_data
 #>  8 2022-01-08   NA  
 #>  9 2022-01-09   NA  
 #> 10 2022-01-10   NA  
-#> # i 356 more rows
+#> # … with 356 more rows
 ```
 
 As displayed above, any dataset processed in REDI should provide 2
@@ -166,7 +166,7 @@ db <- format_data(
     )
 
 db
-#> # A tibble: 101 x 2
+#> # A tibble: 101 × 2
 #>    Input      Output
 #>    <date>      <dbl>
 #>  1 2022-01-01   58.8
@@ -179,7 +179,7 @@ db
 #>  8 2022-01-08   32.4
 #>  9 2022-01-09   45.0
 #> 10 2022-01-10   46.8
-#> # i 91 more rows
+#> # … with 91 more rows
 ```
 
 ### Computation of REDI with `compute_redi()`
@@ -210,7 +210,7 @@ speed-up vectorised operations, one can use the `loop_redi()` function.
 db_redi <- loop_redi(data = db, coef = 0.5)
 
 db_redi
-#> # A tibble: 101 x 4
+#> # A tibble: 101 × 4
 #>    Input      Output  REDI Lambda
 #>    <date>      <dbl> <dbl>  <dbl>
 #>  1 2022-04-11   50.1  51.4    0.5
@@ -223,7 +223,7 @@ db_redi
 #>  8 2022-04-04   36.9  48.2    0.5
 #>  9 2022-04-03   55.0  55.5    0.5
 #> 10 2022-04-02   63.0  55.8    0.5
-#> # i 91 more rows
+#> # … with 91 more rows
 ```
 
 ### Display results with `plot_redi()`
@@ -267,7 +267,7 @@ db_full_redi <- redi(data = db, coef = c(0.1, 0.2, 0.3), plot = TRUE)
 ``` r
 
 db_full_redi
-#> # A tibble: 303 x 4
+#> # A tibble: 303 × 4
 #>    Input      Output  REDI Lambda
 #>    <date>      <dbl> <dbl>  <dbl>
 #>  1 2022-04-11   50.1  50.2    0.1
@@ -280,5 +280,5 @@ db_full_redi
 #>  8 2022-04-04   36.9  50.7    0.1
 #>  9 2022-04-03   55.0  52.1    0.1
 #> 10 2022-04-02   63.0  51.8    0.1
-#> # i 293 more rows
+#> # … with 293 more rows
 ```

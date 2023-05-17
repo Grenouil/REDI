@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 
 ```
 
-# REDI
+# REDI <img src="man/figures/logo_redi.png" align="right" width="120" />
 
 <!-- badges: start -->
 <!-- badges: end -->

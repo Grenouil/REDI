@@ -81,7 +81,7 @@ res
 
 ## Detailed workflow
 
-For a advanced use of the package, here is a quick step-by-step guide.
+For an advanced use of the package, here is a quick step-by-step guide.
 
 ### Data simulation
 
@@ -124,7 +124,7 @@ to `Output` values (*e.g.* workload).
 ### Convert a dataset to the correct format with `format_data()`
 
 However, a real-life dataset will generally not have the correct format
-to compute REDI directy. Therefore, the `format_data()` function is
+to compute REDI directly. Therefore, the `format_data()` function is
 designed to help with this process by identifying the columns
 corresponding to the Input (e.g the date) and the Output (e.g. the
 workload) variables. The Input column should be defined with a correct
@@ -200,13 +200,13 @@ max(db$Input)
 #> [1] "2022-04-11"
 ```
 
-### Computation multiple REDI values over time with `loop_redi()`
+### Computation of multiple REDI values over time with `loop_redi()`
 
 To sequentially compute REDI for all `Input` values in the dataset with
 speed-up vectorised operations, one can use the `loop_redi()` function.
 
 ``` r
-## Apply loop_redi() to tcompute REDI for all dates in the dataset 
+## Apply loop_redi() to compute REDI for all dates in the dataset 
 db_redi <- loop_redi(data = db, coef = 0.5)
 
 db_redi

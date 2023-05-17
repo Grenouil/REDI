@@ -54,7 +54,7 @@ res
 
 ```
 ## Detailed workflow
-For a advanced use of the package, here is a quick step-by-step guide.
+For an advanced use of the package, here is a quick step-by-step guide.
 
 ### Data simulation
 
@@ -78,7 +78,7 @@ As displayed above, any dataset processed in REDI should provide 2 columns: one 
 
 ### Convert a dataset to the correct format with `format_data()`
 
-However, a real-life dataset will generally not have the correct format to compute REDI directy. Therefore, the `format_data()` function is designed to help with this process by identifying the columns corresponding to the Input (e.g the date) and the Output (e.g. the workload) variables. The Input column should be defined with a correct `Date` type.  The function will automatically identify missing values between each observations, considering the `by` argument as the time increment (for instance with 'day', the default, each day between two observed dates is considered missing). Finally, Output values for duplicated Input values can be summarised according to the `summarise_duplicate` argument. 
+However, a real-life dataset will generally not have the correct format to compute REDI directly. Therefore, the `format_data()` function is designed to help with this process by identifying the columns corresponding to the Input (e.g the date) and the Output (e.g. the workload) variables. The Input column should be defined with a correct `Date` type.  The function will automatically identify missing values between each observations, considering the `by` argument as the time increment (for instance with 'day', the default, each day between two observed dates is considered missing). Finally, Output values for duplicated Input values can be summarised according to the `summarise_duplicate` argument. 
 
 ```{r format_dataset}
 
@@ -118,12 +118,12 @@ compute_redi(db, coef = 0.05)
 max(db$Input)
 ```
 
-### Computation multiple REDI values over time with `loop_redi()`
+### Computation of multiple REDI values over time with `loop_redi()`
 
 To sequentially compute REDI for all `Input` values in the dataset with speed-up vectorised operations, one can use the `loop_redi()` function. 
 
 ```{r compute_REDI_via_loop_redi}
-## Apply loop_redi() to tcompute REDI for all dates in the dataset 
+## Apply loop_redi() to compute REDI for all dates in the dataset 
 db_redi <- loop_redi(data = db, coef = 0.5)
 
 db_redi

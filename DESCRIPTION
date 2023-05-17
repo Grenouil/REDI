@@ -26,3 +26,4 @@ Imports:
     magrittr, 
     rlang, 
     lubridate
+URL: https://grenouil.github.io/REDI/

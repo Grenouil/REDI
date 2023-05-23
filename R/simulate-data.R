@@ -51,7 +51,7 @@ simu_db <- function(
   input <- seq(
       lubridate::as_date(start_date),
       lubridate::as_date(end_date),
-      by = 'day')
+      by = by)
 
   size <- length(input)
 

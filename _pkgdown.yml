@@ -1,4 +1,6 @@
 url: https://grenouil.github.io/REDI/
 template:
   bootstrap: 5
+  bootswatch: lumen
+
 

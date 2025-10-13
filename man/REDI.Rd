@@ -11,7 +11,6 @@ redi(
   output = 2,
   plot = TRUE,
   by = "day",
-  format = "\%Y\%m\%d",
   summary_duplicate = mean
 )
 }
@@ -38,9 +37,6 @@ is TRUE.}
 period between two observations. Possible values are 'day', 'week',
 'month', 'year', or any arbitrary number. See documentation of the 'seq()'
 for additional information if necessary. Default is 'day'.}
-
-\item{format}{A character string, indicating the date format of the input.
-Please read \code{lubridate::as_date()}. Default is '\%Y\%m\%d'.}
 
 \item{summary_duplicate}{A function, used to summarise Output values for
 duplicated Input values. Default is mean.}

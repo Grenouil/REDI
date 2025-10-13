@@ -21,8 +21,6 @@
 #'    period between two observations. Possible values are 'day', 'week',
 #'    'month', 'year', or any arbitrary number. See documentation of the 'seq()'
 #'    for additional information if necessary. Default is 'day'.
-#' @param format A character string, indicating the date format of the input.
-#'    Please read `lubridate::as_date()`. Default is '%Y%m%d'.
 #' @param summary_duplicate A function, used to summarise Output values for
 #'    duplicated Input values. Default is mean.
 #'
@@ -41,7 +39,6 @@ redi <- function(
     output = 2,
     plot = TRUE,
     by = 'day',
-    format = '%Y%m%d',
     summary_duplicate = mean
     ){
 
@@ -51,7 +48,6 @@ redi <- function(
     input = input,
     output = output,
     by = by,
-    format = format,
     summary_duplicate = summary_duplicate)
 
   ## Compute loop_REDI for all `Lambda` values

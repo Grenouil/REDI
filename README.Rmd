@@ -99,8 +99,7 @@ db <- format_data(
     data = raw_db,
     input = 'Var3',
     output = 'Var2',
-    by = 'day',
-    format = '%Y%m%d'
+    by = 'day'
     )
 
 db

@@ -2,6 +2,7 @@
 # REDI <img src="man/figures/logo_redi.png" align="right" width="120" />
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 The *REDI* package implements the Robust Exponential Decreasing Index
@@ -34,6 +35,7 @@ format, compute REDI values over time and display results.
 
 ``` r
 library(REDI)
+#> Warning: le package 'REDI' a été compilé avec la version R 4.4.3
 set.seed(42)
 ## Generate a synthetic dataset with the correct format
 data = simu_db()
@@ -52,7 +54,7 @@ data
 #>  8 2022-01-08   NA  
 #>  9 2022-01-09   NA  
 #> 10 2022-01-10   NA  
-#> # … with 356 more rows
+#> # ℹ 356 more rows
 
 ## Compute REDI over all observations for different Lambda values and display results
 res = redi(data)
@@ -76,7 +78,7 @@ res
 #>  8 2022-12-25   49.1  49.7   0.05
 #>  9 2022-12-24   52.6  49.7   0.05
 #> 10 2022-12-23   NA    49.5   0.05
-#> # … with 1,088 more rows
+#> # ℹ 1,088 more rows
 ```
 
 ## Detailed workflow
@@ -114,7 +116,7 @@ simu_data
 #>  8 2022-01-08   NA  
 #>  9 2022-01-09   NA  
 #> 10 2022-01-10   NA  
-#> # … with 356 more rows
+#> # ℹ 356 more rows
 ```
 
 As displayed above, any dataset processed in REDI should provide 2
@@ -161,8 +163,7 @@ db <- format_data(
     data = raw_db,
     input = 'Var3',
     output = 'Var2',
-    by = 'day',
-    format = '%Y%m%d'
+    by = 'day'
     )
 
 db
@@ -179,7 +180,7 @@ db
 #>  8 2022-01-08   32.4
 #>  9 2022-01-09   45.0
 #> 10 2022-01-10   46.8
-#> # … with 91 more rows
+#> # ℹ 91 more rows
 ```
 
 ### Computation of REDI with `compute_redi()`
@@ -223,7 +224,7 @@ db_redi
 #>  8 2022-04-04   36.9  48.2    0.5
 #>  9 2022-04-03   55.0  55.5    0.5
 #> 10 2022-04-02   63.0  55.8    0.5
-#> # … with 91 more rows
+#> # ℹ 91 more rows
 ```
 
 ### Display results with `plot_redi()`
@@ -237,7 +238,8 @@ plot_redi(redi = db_redi,
           x_axis = 'Date',
           y_axis = 'Workload',
           plot_data = TRUE)
-#> Warning: Removed 1 rows containing missing values (`geom_point()`).
+#> Warning: Removed 1 row containing missing values or values outside the scale range
+#> (`geom_point()`).
 ```
 
 <img src="man/figures/README_plot_REDI-1.png" width="80%" />
@@ -280,5 +282,5 @@ db_full_redi
 #>  8 2022-04-04   36.9  50.7    0.1
 #>  9 2022-04-03   55.0  52.1    0.1
 #> 10 2022-04-02   63.0  51.8    0.1
-#> # … with 293 more rows
+#> # ℹ 293 more rows
 ```

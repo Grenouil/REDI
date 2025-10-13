@@ -10,8 +10,6 @@
 #'    period between two observations. Possible values are 'day', 'week',
 #'    'month', 'year', or any arbitrary number. See documentation of the 'seq()'
 #'    for additional information if necessary. Default is 'day'.
-#' @param format A character string, indicating the date format of the input.
-#'    Please read `lubridate::as_date()`. Default is '%Y%m%d'.
 #' @param summary_duplicate A function, used to summarise Output values for
 #'    duplicated Input values. Default is mean.
 #'
@@ -26,12 +24,11 @@ format_data <- function(
     input = 1,
     output = 2,
     by = 'day',
-    format = '%Y%m%d',
     summary_duplicate = mean){
 
   ## Recover the adequate Input and Output column in the dataset
   db <- tibble::tibble(
-    'Input' = data[[input]] %>% lubridate::as_date(format = format),
+    'Input' = data[[input]] %>% lubridate::as_date(),
     'Output' = data[[output]]
   )
 

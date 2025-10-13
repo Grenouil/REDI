@@ -51,7 +51,6 @@ and return a tibble containing both data and corresponding REDI values.</p>
 <span>  output <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>  plot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  by <span class="op">=</span> <span class="st">"day"</span>,</span>
-<span>  format <span class="op">=</span> <span class="st">"%Y%m%d"</span>,</span>
 <span>  summary_duplicate <span class="op">=</span> <span class="va">mean</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -93,11 +92,6 @@ is TRUE.</p></dd>
 period between two observations. Possible values are 'day', 'week',
 'month', 'year', or any arbitrary number. See documentation of the 'seq()'
 for additional information if necessary. Default is 'day'.</p></dd>
-
-
-<dt id="arg-format">format<a class="anchor" aria-label="anchor" href="#arg-format"></a></dt>
-<dd><p>A character string, indicating the date format of the input.
-Please read <code><a href="https://lubridate.tidyverse.org/reference/as_date.html" class="external-link">lubridate::as_date()</a></code>. Default is '%Y%m%d'.</p></dd>
 
 
 <dt id="arg-summary-duplicate">summary_duplicate<a class="anchor" aria-label="anchor" href="#arg-summary-duplicate"></a></dt>

@@ -38,14 +38,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">format_data</span><span class="op">(</span></span>
-<span>  <span class="va">data</span>,</span>
-<span>  input <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>  output <span class="op">=</span> <span class="fl">2</span>,</span>
-<span>  by <span class="op">=</span> <span class="st">"day"</span>,</span>
-<span>  format <span class="op">=</span> <span class="st">"%Y%m%d"</span>,</span>
-<span>  summary_duplicate <span class="op">=</span> <span class="va">mean</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">format_data</span><span class="op">(</span><span class="va">data</span>, input <span class="op">=</span> <span class="fl">1</span>, output <span class="op">=</span> <span class="fl">2</span>, by <span class="op">=</span> <span class="st">"day"</span>, summary_duplicate <span class="op">=</span> <span class="va">mean</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -72,11 +65,6 @@ index of the output column (workload).</p></dd>
 period between two observations. Possible values are 'day', 'week',
 'month', 'year', or any arbitrary number. See documentation of the 'seq()'
 for additional information if necessary. Default is 'day'.</p></dd>
-
-
-<dt id="arg-format">format<a class="anchor" aria-label="anchor" href="#arg-format"></a></dt>
-<dd><p>A character string, indicating the date format of the input.
-Please read <code><a href="https://lubridate.tidyverse.org/reference/as_date.html" class="external-link">lubridate::as_date()</a></code>. Default is '%Y%m%d'.</p></dd>
 
 
 <dt id="arg-summary-duplicate">summary_duplicate<a class="anchor" aria-label="anchor" href="#arg-summary-duplicate"></a></dt>
